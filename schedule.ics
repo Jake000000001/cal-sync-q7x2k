@@ -1,4 +1,6 @@
 BEGIN:VCALENDAR
+X-WR-CALNAME:HMS Stundenplan
+X-WR-TIMEZONE:Europe/Berlin
 PRODID:-//www.sked.de//EN
 X-SKED-VERSION-TERMINSYNC:3.0
 X-SKED-CODIERUNG:UTF-8 ohne BOM
@@ -88,7 +90,7 @@ DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36610
-SUMMARY:Praxisprojekt 1 M14 (Raum 205)
+SUMMARY:Praxisprojekt 1 M14 (Raum 205) – KickOffs
 LOCATION:Hamburg Media School\, Finkenau 35\, 22081 Hamburg
 DESCRIPTION:Veranstaltung: Praxisprojekt 1 M14\nUhrzeit: 8:30 - 18:00 Uhr\nDozent: Ulrike Meier\nRaum: 205\nArt: Vorlesung\nAnmerkung: KickOffs
 DTSTART;TZID=Europe/Berlin:20261007T083000
@@ -107,7 +109,7 @@ DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36611
-SUMMARY:Praxisprojekt 1 M14 (Raum 211/215)
+SUMMARY:Praxisprojekt 1 M14 (Raum 211/215) – KickOffs
 LOCATION:Hamburg Media School\, Finkenau 35\, 22081 Hamburg
 DESCRIPTION:Veranstaltung: Praxisprojekt 1 M14\nUhrzeit: 8:30 - 18:00 Uhr\nDozent: Ulrike Meier\nRaum: 211/215\nArt: Vorlesung\nAnmerkung: KickOffs
 DTSTART;TZID=Europe/Berlin:20261008T083000
