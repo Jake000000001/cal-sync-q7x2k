@@ -2,7 +2,7 @@ name: Sync Moodle Stundenplan
 
 on:
   schedule:
-    - cron: "17 */4 * * *"
+    - cron: "0 * * * *"
   workflow_dispatch: {}
 
 permissions:
