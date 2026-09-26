@@ -4,6 +4,10 @@ Loggt sich bei Moodle (study.hamburgmediaschool.com) ein, laedt die
 persoenliche ICS-Stundenplan-Datei herunter, raeumt sie auf
 (Titel, Ort, Erinnerungen, Kalendername) und filtert unerwuenschte
 Termine raus. Speichert das Ergebnis als schedule.ics.
+
+Bricht mit Fehler ab (=> GitHub schickt eine Fehler-Mail), wenn die
+heruntergeladene Datei verdaechtig aussieht (z.B. leer/kaputt), damit
+nie versehentlich ein leerer oder defekter Kalender live geht.
 """
 import os
 import re
@@ -36,6 +40,12 @@ ART_PREFIX_SKIP = {"Vorlesung", ""}
 # Name, unter dem der abonnierte Kalender auf dem iPhone erscheint.
 CALENDAR_NAME = "HMS Stundenplan"
 
+# Sicherheitscheck: Wenn die heruntergeladene ICS-Datei weniger als so
+# viele Termine enthaelt, gilt das als verdaechtig (z.B. Semesterwechsel,
+# neuer Moodle-Link, kaputter Export) und das Skript bricht mit Fehler ab,
+# statt einen (moeglicherweise leeren) Kalender zu synchronisieren.
+MIN_EXPECTED_EVENTS = 5
+
 
 def get_login_token(session: requests.Session) -> str:
     resp = session.get(LOGIN_URL, timeout=30)
@@ -66,6 +76,7 @@ def download_ics(session: requests.Session, ics_url: str) -> bytes:
     resp = session.get(ics_url, timeout=30)
     resp.raise_for_status()
     content = resp.content
+
     if not content.strip().startswith(b"BEGIN:VCALENDAR"):
         print(
             "Antwort sieht nicht wie eine gueltige ICS-Datei aus "
@@ -73,6 +84,26 @@ def download_ics(session: requests.Session, ics_url: str) -> bytes:
             file=sys.stderr,
         )
         sys.exit(1)
+
+    if b"END:VCALENDAR" not in content:
+        print(
+            "ICS-Datei wirkt unvollstaendig (kein END:VCALENDAR gefunden) "
+            "- vermutlich wurde der Download abgeschnitten. Breche ab.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    event_count = content.count(b"BEGIN:VEVENT")
+    if event_count < MIN_EXPECTED_EVENTS:
+        print(
+            f"Nur {event_count} Termine in der heruntergeladenen Datei gefunden "
+            f"(erwartet mindestens {MIN_EXPECTED_EVENTS}). Das ist verdaechtig "
+            "(z.B. Semesterwechsel, neuer Moodle-Link, kaputter Export) - "
+            "breche sicherheitshalber ab, statt einen kaputten Kalender zu synchronisieren.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     return content
 
 
@@ -187,16 +218,28 @@ def main() -> None:
     session.headers.update({"User-Agent": "Mozilla/5.0 (moodle-ics-sync)"})
 
     login(session, username, password)
-    content = download_ics(session, ics_url)
+    content = download_ics(session, ics_url)  # bricht bei verdaechtigem Inhalt bereits selbst ab
 
     text = content.decode("utf-8", errors="replace")
     transformed = transform_ics(text, FILTER_SUMMARY_PREFIXES, ALARM_MINUTES_BEFORE, HMS_ADDRESS, CALENDAR_NAME)
+
+    # Nach dem Filtern nochmal pruefen: sollte durch einen Bug ploetzlich
+    # (fast) alles rausgefiltert worden sein, lieber abbrechen als eine
+    # kaputte Datei zu committen.
+    remaining_events = transformed.count("BEGIN:VEVENT")
+    if remaining_events < 1:
+        print(
+            "Nach dem Filtern sind 0 Termine uebrig geblieben - das ist "
+            "verdaechtig, breche ab statt einen leeren Kalender zu committen.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="") as f:
         f.write(transformed)
 
     print(
-        f"OK: {OUTPUT_FILE} aktualisiert ({len(transformed)} Zeichen, "
+        f"OK: {OUTPUT_FILE} aktualisiert ({remaining_events} Termine, {len(transformed)} Zeichen, "
         f"gefiltert nach {FILTER_SUMMARY_PREFIXES}, Alarm {ALARM_MINUTES_BEFORE} Min. vorher)."
     )
 
