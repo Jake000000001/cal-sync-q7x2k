@@ -1,0 +1,66 @@
+name: Neuen ICS-Link uebernehmen
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+
+jobs:
+  apply-link:
+    if: >
+      contains(github.event.issue.labels.*.name, 'needs-new-ics-url') &&
+      github.event.comment.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Neuen Link aus Kommentar extrahieren
+        id: extract
+        run: |
+          BODY=$(cat <<'COMMENT_EOF'
+          ${{ github.event.comment.body }}
+          COMMENT_EOF
+          )
+          URL=$(echo "$BODY" | grep -oE 'https?://[^ ]+\.ics[^ ]*' | head -n1)
+          if [ -z "$URL" ]; then
+            URL=$(echo "$BODY" | grep -oE 'https?://[^ ]+' | head -n1)
+          fi
+          if [ -z "$URL" ]; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            echo "url=$URL" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Kein Link gefunden - nachfragen
+        if: steps.extract.outputs.found != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" \
+            --repo "${{ github.repository }}" \
+            --body "Ich konnte in deinem Kommentar keinen Link finden. Antworte bitte noch einmal, nur mit dem neuen ICS-Link (fängt mit https:// an)."
+
+      - name: ICS_URL Secret aktualisieren
+        if: steps.extract.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.ADMIN_PAT }}
+        run: |
+          gh secret set ICS_URL --repo "${{ github.repository }}" --body "${{ steps.extract.outputs.url }}"
+
+      - name: Sync erneut anstossen
+        if: steps.extract.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run sync.yml --repo "${{ github.repository }}"
+
+      - name: Issue kommentieren und schliessen
+        if: steps.extract.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" \
+            --repo "${{ github.repository }}" \
+            --body "Danke! Neuer Link wurde uebernommen und der Sync neu gestartet. ✅"
+          gh issue close "${{ github.event.issue.number }}" --repo "${{ github.repository }}"
