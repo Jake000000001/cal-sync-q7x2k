@@ -1,0 +1,43 @@
+name: Sync Moodle Stundenplan
+
+on:
+  schedule:
+    - cron: "17 */4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Abhaengigkeiten installieren
+        run: pip install requests
+
+      - name: Stundenplan von Moodle holen
+        env:
+          MOODLE_USER: ${{ secrets.MOODLE_USER }}
+          MOODLE_PASS: ${{ secrets.MOODLE_PASS }}
+          ICS_URL: ${{ secrets.ICS_URL }}
+        run: python sync_schedule.py
+
+      - name: Aenderungen committen (nur wenn sich was geaendert hat)
+        run: |
+          git config user.name "moodle-ics-sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add schedule.ics
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen am Stundenplan."
+          else
+            git commit -m "Stundenplan aktualisiert"
+            git push
+          fi
