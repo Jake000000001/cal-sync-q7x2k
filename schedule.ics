@@ -31,480 +31,550 @@ DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36795
-SUMMARY:Welcome Back!\,14:00 - 15:00 Uhr\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Welcome Back!\nUhrzeit: 14:00 - 15:00 Uhr\nDoz
-	ent: -\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Welcome Back!
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Welcome Back!\nUhrzeit: 14:00 - 15:00 Uhr\nDozent: -\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261006T140000
 DTEND;TZID=Europe/Berlin:20261006T150000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36787
-SUMMARY:Julia Uffeln\, MM25\,15:00 - 16:00 Uhr\,Prof. Dr. Armin Rott\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Julia Uffeln\, MM25\nUhrzeit: 15:00 - 16:00 Uh
-	r\nDozent: Prof. Dr. Armin Rott\nRaum: 205\nArt: Gastgespräch\nAnmerkung:
-	 -
+SUMMARY:Julia Uffeln\, MM25
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Julia Uffeln\, MM25\nUhrzeit: 15:00 - 16:00 Uhr\nDozent: Prof. Dr. Armin Rott\nRaum: 205\nArt: Gastgespräch\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261006T150000
 DTEND;TZID=Europe/Berlin:20261006T160000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36786
-SUMMARY:Networking DMM27 und DMM28\,16:00 - 17:30 Uhr\,Prof. Dr. Armin Ro
-	tt\,210
-LOCATION:210
-DESCRIPTION:Veranstaltung: Networking DMM27 und DMM28\nUhrzeit: 16:00 - 1
-	7:30 Uhr\nDozent: Prof. Dr. Armin Rott\nRaum: 210\nArt: Vorlesung\nAnmerk
-	ung: -
+SUMMARY:Networking DMM27 und DMM28
+LOCATION:Raum 210\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Networking DMM27 und DMM28\nUhrzeit: 16:00 - 17:30 Uhr\nDozent: Prof. Dr. Armin Rott\nRaum: 210\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261006T160000
 DTEND;TZID=Europe/Berlin:20261006T173000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36610
-SUMMARY:Praxisprojekt 1 M14\,8:30 - 18:00 Uhr\,Ulrike Meier\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Praxisprojekt 1 M14\nUhrzeit: 8:30 - 18:00 Uhr
-	\nDozent: Ulrike Meier\nRaum: 205\nArt: Vorlesung\nAnmerkung: KickOffs
+SUMMARY:Praxisprojekt 1 M14
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Praxisprojekt 1 M14\nUhrzeit: 8:30 - 18:00 Uhr\nDozent: Ulrike Meier\nRaum: 205\nArt: Vorlesung\nAnmerkung: KickOffs
 DTSTART;TZID=Europe/Berlin:20261007T083000
 DTEND;TZID=Europe/Berlin:20261007T180000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36611
-SUMMARY:Praxisprojekt 1 M14\,8:30 - 18:00 Uhr\,Ulrike Meier\,211/215
-LOCATION:211/215
-DESCRIPTION:Veranstaltung: Praxisprojekt 1 M14\nUhrzeit: 8:30 - 18:00 Uhr
-	\nDozent: Ulrike Meier\nRaum: 211/215\nArt: Vorlesung\nAnmerkung: KickOff
-	s
+SUMMARY:Praxisprojekt 1 M14
+LOCATION:Raum 211/215\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Praxisprojekt 1 M14\nUhrzeit: 8:30 - 18:00 Uhr\nDozent: Ulrike Meier\nRaum: 211/215\nArt: Vorlesung\nAnmerkung: KickOffs
 DTSTART;TZID=Europe/Berlin:20261008T083000
 DTEND;TZID=Europe/Berlin:20261008T180000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36798
-SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
-	chnik\,16:00 - 18:30 Uhr\,Isabel Lerch\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
-	en- und Internet-Technik\nUhrzeit: 16:00 - 18:30 Uhr\nDozent: Isabel Lerc
-	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik\nUhrzeit: 16:00 - 18:30 Uhr\nDozent: Isabel Lerch\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261013T160000
 DTEND;TZID=Europe/Berlin:20261013T183000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36799
-SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
-	chnik\,17:45 - 19:30 Uhr\,Isabel Lerch\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
-	en- und Internet-Technik\nUhrzeit: 17:45 - 19:30 Uhr\nDozent: Isabel Lerc
-	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik\nUhrzeit: 17:45 - 19:30 Uhr\nDozent: Isabel Lerch\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261015T174500
 DTEND;TZID=Europe/Berlin:20261015T193000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36538
-SUMMARY:Ai and Corporate Culture\,9:30 - 19:00 Uhr\,Olle Zachrison\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Ai and Corporate Culture\nUhrzeit: 9:30 - 19:0
-	0 Uhr\nDozent: Olle Zachrison\nRaum: 205\nArt: Elective\nAnmerkung: -
+SUMMARY:Ai and Corporate Culture
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Ai and Corporate Culture\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Olle Zachrison\nRaum: 205\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261016T093000
 DTEND;TZID=Europe/Berlin:20261016T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36539
-SUMMARY:Ai and Corporate Culture\,9:30 - 19:00 Uhr\,Olle Zachrison\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Ai and Corporate Culture\nUhrzeit: 9:30 - 19:0
-	0 Uhr\nDozent: Olle Zachrison\nRaum: 205\nArt: Elective\nAnmerkung: -
+SUMMARY:Ai and Corporate Culture
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Ai and Corporate Culture\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Olle Zachrison\nRaum: 205\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261017T093000
 DTEND;TZID=Europe/Berlin:20261017T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36510
-SUMMARY:Elective: Digitales Produktmanagement (2 ECTS)\,9:30 - 19:00 Uhr\,
-	Gerhard Kuehne\, Felix Rosburg\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Elective: Digitales Produktmanagement (2 ECTS)
-	\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Gerhard Kuehne\, Felix Rosburg\nRaum
-	: 205\nArt: Elective\nAnmerkung: -
+SUMMARY:Elective: Digitales Produktmanagement (2 ECTS)
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Digitales Produktmanagement (2 ECTS)\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Gerhard Kuehne\, Felix Rosburg\nRaum: 205\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261019T093000
 DTEND;TZID=Europe/Berlin:20261019T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36511
-SUMMARY:Elective: Digitales Produktmanagement (2 ECTS)\,9:30 - 19:00 Uhr\,
-	Gerhard Kuehne\, Felix Rosburg\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Elective: Digitales Produktmanagement (2 ECTS)
-	\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Gerhard Kuehne\, Felix Rosburg\nRaum
-	: 205\nArt: Elective\nAnmerkung: -
+SUMMARY:Elective: Digitales Produktmanagement (2 ECTS)
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Digitales Produktmanagement (2 ECTS)\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Gerhard Kuehne\, Felix Rosburg\nRaum: 205\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261020T093000
 DTEND;TZID=Europe/Berlin:20261020T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36705
-SUMMARY:Digitale Medienproduktion II\, M13 DM II: Web- und App-Developmen
-	t\,9:30 - 18:30 Uhr\,Helena Lingor\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13 DM II: Web-
-	 und App-Development\nUhrzeit: 9:30 - 18:30 Uhr\nDozent: Helena Lingor\nR
-	aum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13 DM II: Web- und App-Development
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13 DM II: Web- und App-Development\nUhrzeit: 9:30 - 18:30 Uhr\nDozent: Helena Lingor\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261028T093000
 DTEND;TZID=Europe/Berlin:20261028T183000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36706
-SUMMARY:Digitale Medienproduktion II\, M13 DM II: Web- und App-Developmen
-	t\,9:30 - 18:30 Uhr\,Helena Lingor\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13 DM II: Web-
-	 und App-Development\nUhrzeit: 9:30 - 18:30 Uhr\nDozent: Helena Lingor\nR
-	aum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13 DM II: Web- und App-Development
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13 DM II: Web- und App-Development\nUhrzeit: 9:30 - 18:30 Uhr\nDozent: Helena Lingor\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261029T093000
 DTEND;TZID=Europe/Berlin:20261029T183000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36500
-SUMMARY:Elective: Innovationsmanagement (3 ECTS)\,9:00 - 19:00 Uhr\,Prof.
-	 Dr. Henriette Heidbrink\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Elective: Innovationsmanagement (3 ECTS)\nUhrz
-	eit: 9:00 - 19:00 Uhr\nDozent: Prof. Dr. Henriette Heidbrink\nRaum: 205\n
-	Art: Elective\nAnmerkung: -
+SUMMARY:Elective: Innovationsmanagement (3 ECTS)
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Innovationsmanagement (3 ECTS)\nUhrzeit: 9:00 - 19:00 Uhr\nDozent: Prof. Dr. Henriette Heidbrink\nRaum: 205\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261102T090000
 DTEND;TZID=Europe/Berlin:20261102T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36501
-SUMMARY:Elective: Innovationsmanagement (3 ECTS)\,8:00 - 16:30 Uhr\,Prof.
-	 Dr. Henriette Heidbrink\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Elective: Innovationsmanagement (3 ECTS)\nUhrz
-	eit: 8:00 - 16:30 Uhr\nDozent: Prof. Dr. Henriette Heidbrink\nRaum: 205\n
-	Art: Elective\nAnmerkung: -
+SUMMARY:Elective: Innovationsmanagement (3 ECTS)
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Innovationsmanagement (3 ECTS)\nUhrzeit: 8:00 - 16:30 Uhr\nDozent: Prof. Dr. Henriette Heidbrink\nRaum: 205\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261103T080000
 DTEND;TZID=Europe/Berlin:20261103T163000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36806
-SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
-	chnik\,17:45 - 19:15 Uhr\,Isabel Lerch\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
-	en- und Internet-Technik\nUhrzeit: 17:45 - 19:15 Uhr\nDozent: Isabel Lerc
-	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik\nUhrzeit: 17:45 - 19:15 Uhr\nDozent: Isabel Lerch\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261105T174500
 DTEND;TZID=Europe/Berlin:20261105T191500
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36492
-SUMMARY:Elective: Konsumentenverhalten (3 ECTS)\,9:30 - 19:00 Uhr\,Prof. 
-	Dr. Kristina Klein\,D22
-LOCATION:D22
-DESCRIPTION:Veranstaltung: Elective: Konsumentenverhalten (3 ECTS)\nUhrze
-	it: 9:30 - 19:00 Uhr\nDozent: Prof. Dr. Kristina Klein\nRaum: D22\nArt: E
-	lective\nAnmerkung: -
+SUMMARY:Elective: Konsumentenverhalten (3 ECTS)
+LOCATION:Raum D22\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Konsumentenverhalten (3 ECTS)\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Prof. Dr. Kristina Klein\nRaum: D22\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261106T093000
 DTEND;TZID=Europe/Berlin:20261106T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36521
-SUMMARY:Elective: Music Industry Economics (3 ECTS)\,9:30 - 19:00 Uhr\,Dr
-	. Leonard Rackowitz\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Elective: Music Industry Economics (3 ECTS)\nU
-	hrzeit: 9:30 - 19:00 Uhr\nDozent: Dr. Leonard Rackowitz\nRaum: 205\nArt: 
-	Elective\nAnmerkung: -
+SUMMARY:Elective: Music Industry Economics (3 ECTS)
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Music Industry Economics (3 ECTS)\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Dr. Leonard Rackowitz\nRaum: 205\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261106T093000
 DTEND;TZID=Europe/Berlin:20261106T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36493
-SUMMARY:Elective: Konsumentenverhalten (3 ECTS)\,9:30 - 19:00 Uhr\,Prof. 
-	Dr. Kristina Klein\,D22
-LOCATION:D22
-DESCRIPTION:Veranstaltung: Elective: Konsumentenverhalten (3 ECTS)\nUhrze
-	it: 9:30 - 19:00 Uhr\nDozent: Prof. Dr. Kristina Klein\nRaum: D22\nArt: E
-	lective\nAnmerkung: -
+SUMMARY:Elective: Konsumentenverhalten (3 ECTS)
+LOCATION:Raum D22\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Konsumentenverhalten (3 ECTS)\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Prof. Dr. Kristina Klein\nRaum: D22\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261107T093000
 DTEND;TZID=Europe/Berlin:20261107T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36522
-SUMMARY:Elective: Music Industry Economics (3 ECTS)\,9:30 - 19:00 Uhr\,Dr
-	. Leonard Rackowitz\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Elective: Music Industry Economics (3 ECTS)\nU
-	hrzeit: 9:30 - 19:00 Uhr\nDozent: Dr. Leonard Rackowitz\nRaum: 205\nArt: 
-	Elective\nAnmerkung: -
+SUMMARY:Elective: Music Industry Economics (3 ECTS)
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Music Industry Economics (3 ECTS)\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Dr. Leonard Rackowitz\nRaum: 205\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261107T093000
 DTEND;TZID=Europe/Berlin:20261107T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36800
-SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
-	chnik\,12:00 - 14:00 Uhr\,Isabel Lerch\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
-	en- und Internet-Technik\nUhrzeit: 12:00 - 14:00 Uhr\nDozent: Isabel Lerc
-	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik\nUhrzeit: 12:00 - 14:00 Uhr\nDozent: Isabel Lerch\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261109T120000
 DTEND;TZID=Europe/Berlin:20261109T140000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36801
-SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
-	chnik\,12:30 - 15:00 Uhr\,Isabel Lerch\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
-	en- und Internet-Technik\nUhrzeit: 12:30 - 15:00 Uhr\nDozent: Isabel Lerc
-	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik\nUhrzeit: 12:30 - 15:00 Uhr\nDozent: Isabel Lerch\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261111T123000
 DTEND;TZID=Europe/Berlin:20261111T150000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36802
-SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
-	chnik\,12:15 - 14:00 Uhr\,Isabel Lerch\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
-	en- und Internet-Technik\nUhrzeit: 12:15 - 14:00 Uhr\nDozent: Isabel Lerc
-	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik\nUhrzeit: 12:15 - 14:00 Uhr\nDozent: Isabel Lerch\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261116T121500
 DTEND;TZID=Europe/Berlin:20261116T140000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36803
-SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
-	chnik\,13:00 - 16:30 Uhr\,Isabel Lerch\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
-	en- und Internet-Technik\nUhrzeit: 13:00 - 16:30 Uhr\nDozent: Isabel Lerc
-	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik\nUhrzeit: 13:00 - 16:30 Uhr\nDozent: Isabel Lerch\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261118T130000
 DTEND;TZID=Europe/Berlin:20261118T163000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36807
-SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
-	chnik\,17:45 - 19:15 Uhr\,Isabel Lerch\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
-	en- und Internet-Technik\nUhrzeit: 17:45 - 19:15 Uhr\nDozent: Isabel Lerc
-	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
+SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Technik\nUhrzeit: 17:45 - 19:15 Uhr\nDozent: Isabel Lerch\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261119T174500
 DTEND;TZID=Europe/Berlin:20261119T191500
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36597
-SUMMARY:Elective: Podcast Management\,9:30 - 19:00 Uhr\,Khesrau Behroz\,D
-	22
-LOCATION:D22
-DESCRIPTION:Veranstaltung: Elective: Podcast Management\nUhrzeit: 9:30 - 
-	19:00 Uhr\nDozent: Khesrau Behroz\nRaum: D22\nArt: Elective\nAnmerkung: -
+SUMMARY:Elective: Podcast Management
+LOCATION:Raum D22\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Podcast Management\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Khesrau Behroz\nRaum: D22\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261204T093000
 DTEND;TZID=Europe/Berlin:20261204T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36598
-SUMMARY:Elective: Podcast Management\,9:30 - 19:00 Uhr\,Khesrau Behroz\,D
-	22
-LOCATION:D22
-DESCRIPTION:Veranstaltung: Elective: Podcast Management\nUhrzeit: 9:30 - 
-	19:00 Uhr\nDozent: Khesrau Behroz\nRaum: D22\nArt: Elective\nAnmerkung: -
+SUMMARY:Elective: Podcast Management
+LOCATION:Raum D22\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Elective: Podcast Management\nUhrzeit: 9:30 - 19:00 Uhr\nDozent: Khesrau Behroz\nRaum: D22\nArt: Elective\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261205T093000
 DTEND;TZID=Europe/Berlin:20261205T190000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36783
-SUMMARY:Wiederholungsklausuren\,11:50 - 13:30 Uhr\,WIEDERHOLUNGSKLAUSUR\,
-	205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Wiederholungsklausuren\nUhrzeit: 11:50 - 13:30
-	 Uhr\nDozent: WIEDERHOLUNGSKLAUSUR\nRaum: 205\nArt: Wiederholungsklausur\n
-	Anmerkung: -
+SUMMARY:Wiederholungsklausuren
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Wiederholungsklausuren\nUhrzeit: 11:50 - 13:30 Uhr\nDozent: WIEDERHOLUNGSKLAUSUR\nRaum: 205\nArt: Wiederholungsklausur\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261209T115000
 DTEND;TZID=Europe/Berlin:20261209T133000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
 UID:sked.de36782
-SUMMARY:Klausur Modul 13 Medien- und Internettechnik\,13:00 - 14:00 Uhr\,
-	KLAUSUR\,205
-LOCATION:205
-DESCRIPTION:Veranstaltung: Klausur Modul 13 Medien- und Internettechnik\n
-	Uhrzeit: 13:00 - 14:00 Uhr\nDozent: KLAUSUR\nRaum: 205\nArt: Klausur\nAnm
-	erkung: -
+SUMMARY:Klausur Modul 13 Medien- und Internettechnik
+LOCATION:Raum 205\, Hamburg Media School\, Finkenau 35\, 22081 Hamburg
+DESCRIPTION:Veranstaltung: Klausur Modul 13 Medien- und Internettechnik\nUhrzeit: 13:00 - 14:00 Uhr\nDozent: KLAUSUR\nRaum: 205\nArt: Klausur\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261216T130000
 DTEND;TZID=Europe/Berlin:20261216T140000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Erinnerung
+TRIGGER:-PT15M
+END:VALARM
 END:VEVENT
 END:VCALENDAR
