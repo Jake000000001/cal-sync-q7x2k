@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Loggt sich bei Moodle (study.hamburgmediaschool.com) ein, laedt die
-persoenliche ICS-Stundenplan-Datei herunter und speichert sie als
-schedule.ics im Projektordner.
+persoenliche ICS-Stundenplan-Datei herunter, filtert unerwuenschte
+Termine raus und speichert das Ergebnis als schedule.ics.
 """
 import os
 import re
@@ -13,6 +13,13 @@ import requests
 BASE = "https://study.hamburgmediaschool.com"
 LOGIN_URL = f"{BASE}/login/index.php"
 OUTPUT_FILE = "schedule.ics"
+
+# Termine, deren SUMMARY mit einem dieser Texte beginnt, werden
+# komplett aus dem Kalender entfernt (z.B. der woechentliche
+# "frei fuer Studijobs"-Platzhalter).
+FILTER_SUMMARY_PREFIXES = [
+    "Studijobs",
+]
 
 
 def get_login_token(session: requests.Session) -> str:
@@ -54,6 +61,48 @@ def download_ics(session: requests.Session, ics_url: str) -> bytes:
     return content
 
 
+def filter_events(ics_text: str, prefixes: list) -> str:
+    """Entfernt komplette VEVENT-Bloecke, deren SUMMARY mit einem der
+    angegebenen Prefixe beginnt (z.B. "Studijobs")."""
+    if not prefixes:
+        return ics_text
+
+    lines = ics_text.splitlines(keepends=True)
+    output = []
+    i = 0
+    n = len(lines)
+
+    while i < n:
+        line = lines[i]
+        if line.lstrip().startswith("BEGIN:VEVENT"):
+            block = [line]
+            i += 1
+            while i < n and not lines[i].lstrip().startswith("END:VEVENT"):
+                block.append(lines[i])
+                i += 1
+            if i < n:
+                block.append(lines[i])  # END:VEVENT-Zeile mit anhaengen
+                i += 1
+
+            # ICS-Zeilenfaltung rueckgaengig machen, um SUMMARY zuverlaessig
+            # zu erkennen (Folgezeilen beginnen laut RFC5545 mit Leerzeichen/Tab).
+            unfolded = "".join(block)
+            unfolded = re.sub(r'\r?\n[ \t]', '', unfolded)
+
+            summary_match = re.search(r'SUMMARY:(.*)', unfolded)
+            summary = summary_match.group(1).strip() if summary_match else ""
+
+            if any(summary.startswith(prefix) for prefix in prefixes):
+                continue  # Block ueberspringen = Termin wird entfernt
+
+            output.extend(block)
+        else:
+            output.append(line)
+            i += 1
+
+    return "".join(output)
+
+
 def main() -> None:
     username = os.environ.get("MOODLE_USER")
     password = os.environ.get("MOODLE_PASS")
@@ -69,10 +118,13 @@ def main() -> None:
     login(session, username, password)
     content = download_ics(session, ics_url)
 
-    with open(OUTPUT_FILE, "wb") as f:
-        f.write(content)
+    text = content.decode("utf-8", errors="replace")
+    filtered = filter_events(text, FILTER_SUMMARY_PREFIXES)
 
-    print(f"OK: {OUTPUT_FILE} aktualisiert ({len(content)} Bytes).")
+    with open(OUTPUT_FILE, "w", encoding="utf-8", newline="") as f:
+        f.write(filtered)
+
+    print(f"OK: {OUTPUT_FILE} aktualisiert ({len(filtered)} Zeichen, gefiltert nach {FILTER_SUMMARY_PREFIXES}).")
 
 
 if __name__ == "__main__":
