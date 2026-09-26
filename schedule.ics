@@ -109,21 +109,6 @@ BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
-UID:sked.de36323
-SUMMARY:Studijobs\,8:30 - 20:30 Uhr\,extern
-LOCATION:extern
-DESCRIPTION:Veranstaltung: Studijobs\nUhrzeit: 8:30 - 20:30 Uhr\nDozent: 
-	-\nRaum: extern\nArt: frei für\nAnmerkung: -
-DTSTART;TZID=Europe/Berlin:20261009T083000
-DTEND;TZID=Europe/Berlin:20261009T203000
-PRIORITY:5
-CLASS:PUBLIC
-CATEGORIES:sked.de
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20260913T081715Z
-TRANSP:OPAQUE
-SEQUENCE:0
 UID:sked.de36798
 SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
 	chnik\,16:00 - 18:30 Uhr\,Isabel Lerch\,205
@@ -248,21 +233,6 @@ DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13 DM II: Web-
 	aum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261029T093000
 DTEND;TZID=Europe/Berlin:20261029T183000
-PRIORITY:5
-CLASS:PUBLIC
-CATEGORIES:sked.de
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20260913T081715Z
-TRANSP:OPAQUE
-SEQUENCE:0
-UID:sked.de36326
-SUMMARY:Studijobs\,8:30 - 20:30 Uhr\,extern
-LOCATION:extern
-DESCRIPTION:Veranstaltung: Studijobs\nUhrzeit: 8:30 - 20:30 Uhr\nDozent: 
-	-\nRaum: extern\nArt: frei für\nAnmerkung: -
-DTSTART;TZID=Europe/Berlin:20261030T083000
-DTEND;TZID=Europe/Berlin:20261030T203000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
@@ -424,21 +394,6 @@ BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
-UID:sked.de36328
-SUMMARY:Studijobs\,8:30 - 20:30 Uhr\,extern
-LOCATION:extern
-DESCRIPTION:Veranstaltung: Studijobs\nUhrzeit: 8:30 - 20:30 Uhr\nDozent: 
-	-\nRaum: extern\nArt: frei für\nAnmerkung: -
-DTSTART;TZID=Europe/Berlin:20261113T083000
-DTEND;TZID=Europe/Berlin:20261113T203000
-PRIORITY:5
-CLASS:PUBLIC
-CATEGORIES:sked.de
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20260913T081715Z
-TRANSP:OPAQUE
-SEQUENCE:0
 UID:sked.de36802
 SUMMARY:Digitale Medienproduktion II\, M13: DM II Medien- und Internet-Te
 	chnik\,12:15 - 14:00 Uhr\,Isabel Lerch\,205
@@ -482,36 +437,6 @@ DESCRIPTION:Veranstaltung: Digitale Medienproduktion II\, M13: DM II Medi
 	h\nRaum: 205\nArt: Vorlesung\nAnmerkung: -
 DTSTART;TZID=Europe/Berlin:20261119T174500
 DTEND;TZID=Europe/Berlin:20261119T191500
-PRIORITY:5
-CLASS:PUBLIC
-CATEGORIES:sked.de
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20260913T081715Z
-TRANSP:OPAQUE
-SEQUENCE:0
-UID:sked.de36772
-SUMMARY:Studijobs\,8:30 - 20:30 Uhr\,extern
-LOCATION:extern
-DESCRIPTION:Veranstaltung: Studijobs\nUhrzeit: 8:30 - 20:30 Uhr\nDozent: 
-	-\nRaum: extern\nArt: frei für\nAnmerkung: -
-DTSTART;TZID=Europe/Berlin:20261120T083000
-DTEND;TZID=Europe/Berlin:20261120T203000
-PRIORITY:5
-CLASS:PUBLIC
-CATEGORIES:sked.de
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20260913T081715Z
-TRANSP:OPAQUE
-SEQUENCE:0
-UID:sked.de36330
-SUMMARY:Studijobs\,8:30 - 20:30 Uhr\,extern
-LOCATION:extern
-DESCRIPTION:Veranstaltung: Studijobs\nUhrzeit: 8:30 - 20:30 Uhr\nDozent: 
-	-\nRaum: extern\nArt: frei für\nAnmerkung: -
-DTSTART;TZID=Europe/Berlin:20261127T083000
-DTEND;TZID=Europe/Berlin:20261127T203000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
@@ -569,21 +494,6 @@ BEGIN:VEVENT
 DTSTAMP:20260913T081715Z
 TRANSP:OPAQUE
 SEQUENCE:0
-UID:sked.de36332
-SUMMARY:Studijobs\,8:30 - 20:30 Uhr\,extern
-LOCATION:extern
-DESCRIPTION:Veranstaltung: Studijobs\nUhrzeit: 8:30 - 20:30 Uhr\nDozent: 
-	-\nRaum: extern\nArt: frei für\nAnmerkung: -
-DTSTART;TZID=Europe/Berlin:20261211T083000
-DTEND;TZID=Europe/Berlin:20261211T203000
-PRIORITY:5
-CLASS:PUBLIC
-CATEGORIES:sked.de
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20260913T081715Z
-TRANSP:OPAQUE
-SEQUENCE:0
 UID:sked.de36782
 SUMMARY:Klausur Modul 13 Medien- und Internettechnik\,13:00 - 14:00 Uhr\,
 	KLAUSUR\,205
@@ -593,21 +503,6 @@ DESCRIPTION:Veranstaltung: Klausur Modul 13 Medien- und Internettechnik\n
 	erkung: -
 DTSTART;TZID=Europe/Berlin:20261216T130000
 DTEND;TZID=Europe/Berlin:20261216T140000
-PRIORITY:5
-CLASS:PUBLIC
-CATEGORIES:sked.de
-END:VEVENT
-BEGIN:VEVENT
-DTSTAMP:20260913T081715Z
-TRANSP:OPAQUE
-SEQUENCE:0
-UID:sked.de36333
-SUMMARY:Studijobs\,8:30 - 20:30 Uhr\,extern
-LOCATION:extern
-DESCRIPTION:Veranstaltung: Studijobs\nUhrzeit: 8:30 - 20:30 Uhr\nDozent: 
-	-\nRaum: extern\nArt: frei für\nAnmerkung: -
-DTSTART;TZID=Europe/Berlin:20261218T083000
-DTEND;TZID=Europe/Berlin:20261218T203000
 PRIORITY:5
 CLASS:PUBLIC
 CATEGORIES:sked.de
