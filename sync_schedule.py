@@ -2,8 +2,8 @@
 """
 Loggt sich bei Moodle (study.hamburgmediaschool.com) ein, laedt die
 persoenliche ICS-Stundenplan-Datei herunter, raeumt sie auf
-(Titel, Ort, Erinnerungen) und filtert unerwuenschte Termine raus.
-Speichert das Ergebnis als schedule.ics.
+(Titel, Ort, Erinnerungen, Kalendername) und filtert unerwuenschte
+Termine raus. Speichert das Ergebnis als schedule.ics.
 """
 import os
 import re
@@ -32,6 +32,9 @@ HMS_ADDRESS = "Hamburg Media School, Finkenau 35, 22081 Hamburg"
 # "Art"-Werte, die NICHT als Praefix vor den Titel gesetzt werden (weil sie
 # der Normalfall sind und keine zusaetzliche Kennzeichnung brauchen).
 ART_PREFIX_SKIP = {"Vorlesung", ""}
+
+# Name, unter dem der abonnierte Kalender auf dem iPhone erscheint.
+CALENDAR_NAME = "HMS Stundenplan"
 
 
 def get_login_token(session: requests.Session) -> str:
@@ -91,8 +94,8 @@ def process_event_block(block_text: str, filter_prefixes, alarm_minutes: int, ad
     raw_summary = summary_line.split(":", 1)[1].strip() if summary_line else ""
 
     # Das DESCRIPTION-Feld enthaelt saubere, gelabelte Werte
-    # ("Veranstaltung: ...\nDozent: ...\nRaum: ...\nArt: ..."), die wir
-    # fuers Aufraeumen von Titel und Ort verwenden.
+    # ("Veranstaltung: ...\nDozent: ...\nRaum: ...\nArt: ...\nAnmerkung: ..."),
+    # die wir fuers Aufraeumen von Titel und Ort verwenden.
     desc_fields = {}
     if description_line:
         desc_val = description_line.split(":", 1)[1]
@@ -105,20 +108,25 @@ def process_event_block(block_text: str, filter_prefixes, alarm_minutes: int, ad
     clean_title = desc_fields.get("Veranstaltung", "").strip()
     room = desc_fields.get("Raum", "").strip()
     art = desc_fields.get("Art", "").strip()
+    note = desc_fields.get("Anmerkung", "").strip()
 
     check_value = clean_title or raw_summary
     if any(check_value.startswith(p) for p in filter_prefixes):
         return None  # Termin komplett entfernen
 
     has_room = bool(room) and room not in ("-", "extern")
+    has_note = bool(note) and note != "-"
 
     # Titel: Art als Praefix (z.B. "Gastgespraech: ..."), ausser bei
-    # "Vorlesung" (Normalfall). Raum als Suffix in Klammern.
+    # "Vorlesung" (Normalfall). Raum als Suffix in Klammern, Anmerkung
+    # (z.B. "KickOffs") ganz am Ende.
     display_title = clean_title
     if art and art not in ART_PREFIX_SKIP:
         display_title = f"{art}: {display_title}"
     if has_room:
         display_title = f"{display_title} (Raum {room})"
+    if has_note:
+        display_title = f"{display_title} – {note}"
 
     new_lines = []
     for line in lines:
@@ -145,14 +153,25 @@ def process_event_block(block_text: str, filter_prefixes, alarm_minutes: int, ad
     return "\r\n".join(new_lines) + "\r\n"
 
 
-def transform_ics(ics_text: str, filter_prefixes, alarm_minutes: int, address: str) -> str:
+def transform_ics(ics_text: str, filter_prefixes, alarm_minutes: int, address: str, calendar_name: str) -> str:
     pattern = re.compile(r"BEGIN:VEVENT\r\n.*?END:VEVENT\r\n", re.S)
 
     def repl(m):
         result = process_event_block(m.group(0), filter_prefixes, alarm_minutes, address)
         return result if result is not None else ""
 
-    return pattern.sub(repl, ics_text)
+    out = pattern.sub(repl, ics_text)
+
+    # Kalendername/-zeitzone direkt nach BEGIN:VCALENDAR einfuegen, damit
+    # der abonnierte Kalender auf dem iPhone einen sprechenden Namen hat.
+    if "X-WR-CALNAME" not in out:
+        header = (
+            f"X-WR-CALNAME:{escape_ics_text(calendar_name)}\r\n"
+            "X-WR-TIMEZONE:Europe/Berlin\r\n"
+        )
+        out = out.replace("BEGIN:VCALENDAR\r\n", "BEGIN:VCALENDAR\r\n" + header, 1)
+
+    return out
 
 
 def main() -> None:
@@ -171,7 +190,7 @@ def main() -> None:
     content = download_ics(session, ics_url)
 
     text = content.decode("utf-8", errors="replace")
-    transformed = transform_ics(text, FILTER_SUMMARY_PREFIXES, ALARM_MINUTES_BEFORE, HMS_ADDRESS)
+    transformed = transform_ics(text, FILTER_SUMMARY_PREFIXES, ALARM_MINUTES_BEFORE, HMS_ADDRESS, CALENDAR_NAME)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="") as f:
         f.write(transformed)
