@@ -30,19 +30,21 @@ jobs:
         run: |
           REPO="${{ github.repository }}"
           RUN_URL="https://github.com/${REPO}/actions/runs/${{ github.event.workflow_run.id }}"
-
           EXISTING=$(gh issue list --repo "$REPO" --label needs-new-ics-url --state open --json number --jq '.[0].number')
-
           if [ -n "$EXISTING" ] && [ "$EXISTING" != "null" ]; then
             gh issue comment "$EXISTING" --repo "$REPO" --body "Der Sync ist erneut fehlgeschlagen: $RUN_URL"
           else
+            BODY=$(cat <<BODY_EOF
+          Der automatische Moodle-Sync ist fehlgeschlagen: $RUN_URL
+
+          Vermutlich hat sich die ICS-Download-URL auf Moodle geaendert (z.B. neues Semester).
+
+          So gehts weiter: Lade dir die aktuelle ICS-Datei-URL von Moodle und antworte einfach auf diese Mail (bzw. kommentiere dieses Issue) mit dem neuen Link. Der Link wird dann automatisch uebernommen und der Sync direkt neu gestartet.
+          BODY_EOF
+          )
             gh issue create \
               --repo "$REPO" \
               --title "Stundenplan-Sync fehlgeschlagen - neuer Link noetig?" \
               --label needs-new-ics-url \
-              --body "Der automatische Moodle-Sync ist fehlgeschlagen: $RUN_URL
-
-Vermutlich hat sich die ICS-Download-URL auf Moodle geaendert (z.B. neues Semester).
-
-**So geht's weiter:** Lade dir die aktuelle ICS-Datei-URL von Moodle und antworte einfach auf diese Mail (bzw. kommentiere dieses Issue) mit dem neuen Link. Der Link wird dann automatisch uebernommen und der Sync direkt neu gestartet."
+              --body "$BODY"
           fi
