@@ -19,11 +19,27 @@ BASE = "https://study.hamburgmediaschool.com"
 LOGIN_URL = f"{BASE}/login/index.php"
 OUTPUT_FILE = "schedule.ics"
 
+# Zweite, nur fuer Jakob persoenlich gedachte Ausgabedatei: identisch zu
+# schedule.ics, aber die Elective-Parallelgruppen sind bereits auf seine
+# tatsaechlich gewaehlten Electives reduziert (siehe PERSONAL_ELECTIVE_KEEP).
+PERSONAL_OUTPUT_FILE = "personal.ics"
+
 # Termine, deren Titel (aus dem "Veranstaltung"-Feld) mit einem dieser
 # Texte beginnt, werden komplett aus dem Kalender entfernt (z.B. der
 # woechentliche "frei fuer Studijobs"-Platzhalter).
 FILTER_SUMMARY_PREFIXES = [
     "Studijobs",
+]
+
+# Moodle listet pro Elective-Slot alle parallel laufenden Gruppen (jeder
+# Student sieht alle, unabhaengig von der eigenen Wahl). Fuer die
+# persoenliche Variante (personal.ics) behalten wir nur die Electives, die
+# Jakob tatsaechlich als Erstwunsch belegt hat; alle anderen Parallelgruppen
+# werden dort rausgefiltert. Schluessel-Woerter muessen im (rohen) Titel
+# vorkommen - Gross-/Kleinschreibung wird ignoriert.
+PERSONAL_ELECTIVE_KEEP = [
+    "Innovationsmanagement",
+    "Digitales Produktmanagement",
 ]
 
 # Wie viele Minuten vor jedem Termin eine Erinnerung ausgeloest wird.
@@ -111,10 +127,17 @@ def escape_ics_text(text: str) -> str:
     return text.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,")
 
 
-def process_event_block(block_text: str, filter_prefixes, alarm_minutes: int, address: str):
+def process_event_block(block_text: str, filter_prefixes, alarm_minutes: int, address: str, elective_keep=None):
     """Verarbeitet einen einzelnen BEGIN:VEVENT...END:VEVENT-Block.
     Gibt den (moeglicherweise veraenderten) Block als String zurueck,
-    oder None, wenn der Termin komplett entfernt werden soll."""
+    oder None, wenn der Termin komplett entfernt werden soll.
+
+    elective_keep: optionale Liste von Stichwoertern. Wenn gesetzt, werden
+    Termine mit Art=Elective, deren (roher) Titel keines der Stichwoerter
+    enthaelt, zusaetzlich entfernt (fuer die persoenliche Kalendervariante).
+    Wichtig: der Elective-Charakter wird am "Art"-Feld festgemacht, nicht am
+    Titeltext - Moodle schreibt "Elective:" naemlich nur bei manchen
+    Parallelgruppen auch in die "Veranstaltung" (Titel), bei anderen nicht."""
     # ICS-Zeilenfaltung aufloesen (RFC5545: Folgezeile beginnt mit Space/Tab).
     unfolded = re.sub(r"\r\n[ \t]", "", block_text)
     lines = unfolded.split("\r\n")
@@ -144,6 +167,10 @@ def process_event_block(block_text: str, filter_prefixes, alarm_minutes: int, ad
     check_value = clean_title or raw_summary
     if any(check_value.startswith(p) for p in filter_prefixes):
         return None  # Termin komplett entfernen
+
+    if elective_keep is not None and art.lower() == "elective":
+        if not any(k.lower() in check_value.lower() for k in elective_keep):
+            return None  # nicht gewaehlte Parallelgruppe, fuer persoenliche Variante entfernen
 
     has_room = bool(room) and room not in ("-", "extern")
     has_note = bool(note) and note != "-"
@@ -184,11 +211,11 @@ def process_event_block(block_text: str, filter_prefixes, alarm_minutes: int, ad
     return "\r\n".join(new_lines) + "\r\n"
 
 
-def transform_ics(ics_text: str, filter_prefixes, alarm_minutes: int, address: str, calendar_name: str) -> str:
+def transform_ics(ics_text: str, filter_prefixes, alarm_minutes: int, address: str, calendar_name: str, elective_keep=None) -> str:
     pattern = re.compile(r"BEGIN:VEVENT\r\n.*?END:VEVENT\r\n", re.S)
 
     def repl(m):
-        result = process_event_block(m.group(0), filter_prefixes, alarm_minutes, address)
+        result = process_event_block(m.group(0), filter_prefixes, alarm_minutes, address, elective_keep=elective_keep)
         return result if result is not None else ""
 
     out = pattern.sub(repl, ics_text)
@@ -222,6 +249,10 @@ def main() -> None:
 
     text = content.decode("utf-8", errors="replace")
     transformed = transform_ics(text, FILTER_SUMMARY_PREFIXES, ALARM_MINUTES_BEFORE, HMS_ADDRESS, CALENDAR_NAME)
+    personal_transformed = transform_ics(
+        text, FILTER_SUMMARY_PREFIXES, ALARM_MINUTES_BEFORE, HMS_ADDRESS,
+        "HMS Stundenplan (privat)", elective_keep=PERSONAL_ELECTIVE_KEEP,
+    )
 
     # Nach dem Filtern nochmal pruefen: sollte durch einen Bug ploetzlich
     # (fast) alles rausgefiltert worden sein, lieber abbrechen als eine
@@ -235,12 +266,28 @@ def main() -> None:
         )
         sys.exit(1)
 
+    personal_remaining_events = personal_transformed.count("BEGIN:VEVENT")
+    if personal_remaining_events < 1:
+        print(
+            "Persoenliche Variante: nach dem Filtern sind 0 Termine uebrig geblieben "
+            "- breche ab statt eine kaputte personal.ics zu committen.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="") as f:
         f.write(transformed)
+
+    with open(PERSONAL_OUTPUT_FILE, "w", encoding="utf-8", newline="") as f:
+        f.write(personal_transformed)
 
     print(
         f"OK: {OUTPUT_FILE} aktualisiert ({remaining_events} Termine, {len(transformed)} Zeichen, "
         f"gefiltert nach {FILTER_SUMMARY_PREFIXES}, Alarm {ALARM_MINUTES_BEFORE} Min. vorher)."
+    )
+    print(
+        f"OK: {PERSONAL_OUTPUT_FILE} aktualisiert ({personal_remaining_events} Termine, "
+        f"zusaetzlich auf Electives {PERSONAL_ELECTIVE_KEEP} gefiltert)."
     )
 
 

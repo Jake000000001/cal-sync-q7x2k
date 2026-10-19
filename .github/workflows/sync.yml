@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "moodle-ics-sync-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add schedule.ics
+          git add schedule.ics personal.ics
           if git diff --cached --quiet; then
             echo "Keine Aenderungen am Stundenplan."
           else
